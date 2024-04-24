@@ -1,7 +1,21 @@
 mod huffman;
 
+use huffman::*;
+use std::collections::HashMap;
+
 fn main() {
-    println!("Hello, world!");
+    let text = "hello world";
+    let freq_map = build_frequency_map(text);
+    let huffman_tree = build_huffman_tree(&freq_map);
+    let mut codebook = HashMap::new();
+    build_codebook(&huffman_tree, String::new(), &mut codebook);
+
+    let encoded = encode(text, &codebook);
+    let decoded = decode(&encoded, &huffman_tree);
+
+    println!("Original text: {}", text);
+    println!("Encoded text: {}", encoded);
+    println!("Decoded text: {}", decoded);
 }
 /*
 HOW TO:
