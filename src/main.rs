@@ -2,18 +2,19 @@ mod huffman;
 
 use huffman::*;
 use std::collections::HashMap;
+use std::io::stdin;
 
 fn main() {
-    let text = "hello world";
-    let freq_map = build_frequency_map(text);
+    println!("Welcome to Andrey's Huffman Encoder! Enter text to encode:");
+    let mut text = String::new();
+    stdin().read_line(&mut text).expect("Failed to read line");
+    let freq_map = build_frequency_map(&*text);
     let huffman_tree = build_huffman_tree(&freq_map);
     let mut codebook = HashMap::new();
     build_codebook(&huffman_tree, String::new(), &mut codebook);
 
-    let encoded = encode(text, &codebook);
+    let encoded = encode(&*text, &codebook);
     let decoded = decode(&encoded, &huffman_tree);
-
-    println!("Original text: {}", text);
     println!("Encoded text: {}", encoded);
     println!("Decoded text: {}", decoded);
 }

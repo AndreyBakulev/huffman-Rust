@@ -1,6 +1,6 @@
 use std::collections::{BinaryHeap, HashMap};
 
-#[derive(PartialEq, Eq, PartialOrd, Ord)]
+#[derive(PartialEq, Eq, PartialOrd, Ord, Debug)]
 pub struct Node {
     pub freq: usize,
     pub symbol: Option<char>,
@@ -18,8 +18,9 @@ pub fn build_frequency_map(text: &str) -> HashMap<char, usize> {
     freq_map
 }
 pub fn build_huffman_tree(freq_map: &HashMap<char, usize>) -> Node {
-    //basically, a heap is like an array except it auto-sorts?
+    //basically, a binary heap is a pre-built btree
     let mut heap = BinaryHeap::new();
+    //create every leaf node for all the values from hmap
     for (&symbol, &freq) in freq_map {
         heap.push(Node {
             freq,
@@ -28,6 +29,7 @@ pub fn build_huffman_tree(freq_map: &HashMap<char, usize>) -> Node {
             right: None,
         });
     }
+    //get two smallest nodes from heap, make them into one, and push it
     while heap.len() > 1 {
         let left = heap.pop().unwrap();
         let right = heap.pop().unwrap();
