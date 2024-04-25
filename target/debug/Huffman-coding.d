@@ -1,1 +1,1 @@
-C:\Program\ Files\GitHub\Rust\ Rover\huffman-Rust\target\debug\Huffman-coding.exe: C:\Program\ Files\GitHub\Rust\ Rover\huffman-Rust\src\huffman.rs C:\Program\ Files\GitHub\Rust\ Rover\huffman-Rust\src\main.rs
+/Users/macpro/Documents/GitHub/RustRover/huffman_coding/target/debug/Huffman-coding: /Users/macpro/Documents/GitHub/RustRover/huffman_coding/src/huffman.rs /Users/macpro/Documents/GitHub/RustRover/huffman_coding/src/main.rs

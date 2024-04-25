@@ -1,4 +1,5 @@
 use std::collections::{BinaryHeap, HashMap};
+use std::fmt::{Display};
 
 #[derive(PartialEq, Eq, PartialOrd, Ord, Debug)]
 pub struct Node {
@@ -14,13 +15,13 @@ pub fn build_frequency_map(text: &str) -> HashMap<char, usize> {
     for c in text.chars() {
         *freq_map.entry(c).or_insert(0) += 1;
     }
-    //println!("{:?}",freq_map);
+    println!("{:?}",freq_map);
     freq_map
 }
 pub fn build_huffman_tree(freq_map: &HashMap<char, usize>) -> Node {
     //basically, a binary heap is a pre-built btree
     let mut heap = BinaryHeap::new();
-    //create every leaf node for all the values from hmap
+    //create every leaf node for all the values from map
     for (&symbol, &freq) in freq_map {
         heap.push(Node {
             freq,
@@ -63,6 +64,7 @@ pub fn encode(text: &str, codebook: &HashMap<char, String>) -> String {
     for c in text.chars() {
         encoded += codebook.get(&c).unwrap();
     }
+    println!("{:?}",codebook);
     encoded
 }
 
