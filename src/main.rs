@@ -11,8 +11,7 @@ fn main() {
     println!("Welcome to Andrey's Huffman Encoder! Enter text to encode or give a file directory!:");
     let mut text = String::new();
     stdin().read_line(&mut text).expect("Failed to read line");
-    let mut path = "./src/".to_owned() + &*text.clone().trim();
-    println!("Path:{}",&path);
+    let path = "./src/".to_owned() + &*text.clone().trim();
     if Path::new(&path).exists(){
         text = fs::read_to_string(&path)
             .expect("Should have been able to read the file");
@@ -37,6 +36,11 @@ fn main() {
 PROBLEMS:
     none :D
 
-TODO:
+Additions:
 shannon-fano coding
+DEFLATE
+LZ4
+
+
+end goal is to zip files with this algorithm
  */
