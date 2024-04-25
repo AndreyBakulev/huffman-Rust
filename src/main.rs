@@ -1,7 +1,6 @@
 pub mod huffman;
 pub use crate::huffman::*;
 use huffman::*;
-use std::collections::HashMap;
 use std::fs;
 use std::io::stdin;
 use std::path::Path;
@@ -18,13 +17,8 @@ fn main() {
     } else {
         println!("No path found, encoding input");
     }
-    let freq_map = build_frequency_map(&*text);
-    let huffman_tree = build_huffman_tree(&freq_map);
-    let mut codebook = HashMap::new();
-    build_codebook(&huffman_tree, String::new(),&mut codebook);
     let timer = Instant::now();
-    let encoded = encode(&*text, &codebook);
-    let decoded = decode(&encoded, &huffman_tree);
+    let encoded = encode_huffman(&*text);
     let time_taken = timer.elapsed();
     //println!("Encoded text: {}", encoded);
     //println!("Decoded text: {}", decoded);

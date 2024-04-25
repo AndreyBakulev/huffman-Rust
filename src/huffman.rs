@@ -20,6 +20,15 @@ impl PartialOrd for Node {
         Some(self.cmp(other))
     }
 }
+pub fn encode_huffman(text: &str) -> String{
+    let freq_map = build_frequency_map(&*text);
+    let huffman_tree = build_huffman_tree(&freq_map);
+    let mut codebook = HashMap::new();
+    build_codebook(&huffman_tree, String::new(),&mut codebook);
+    let encoded = encode(&*text, &codebook);
+    decode(&*encoded,&huffman_tree);
+    encoded
+}
 pub fn build_frequency_map(text: &str) -> HashMap<char, usize> {
     let mut freq_map = HashMap::new();
     //counts occurrences of each char
