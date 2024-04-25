@@ -1,4 +1,5 @@
 pub mod huffman;
+mod image;
 pub use crate::huffman::*;
 use huffman::*;
 use std::fs;
