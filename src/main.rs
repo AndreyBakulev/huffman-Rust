@@ -32,11 +32,11 @@ I DO NOT LIKE THEM, SAM-I-AM.";
     let encoded = encode(&*text, &codebook);
     let decoded = decode(&encoded, &huffman_tree);
     let time_taken = timer.elapsed();
-    println!("Encoded text: {}", encoded);
-    println!("Decoded text: {}", decoded);
+    //println!("Encoded text: {}", encoded);
+    //println!("Decoded text: {}", decoded);
     println!("Took {:?} to encode + decode a string of len {}",time_taken, text.len());
 }
 /*
 PROBLEMS:
-I think I made my map work backwards so the most common characters r the longest which is obv bad
+    everything works but im confused!
  */
