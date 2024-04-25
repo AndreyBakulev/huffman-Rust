@@ -26,9 +26,10 @@ pub fn build_frequency_map(text: &str) -> HashMap<char, usize> {
     for c in text.chars() {
         *freq_map.entry(c).or_insert(0) += 1;
     }
-    for (key,value) in &freq_map{
-        println!("{} : {}\n",key,value);
-    }
+    // for (key,value) in &freq_map{
+    //     println!("{} : {}",key,value);
+    // }
+    //println!("-----------------------");
     freq_map
 }
 pub fn build_huffman_tree(freq_map: &HashMap<char, usize>) -> Node {
@@ -80,12 +81,11 @@ pub fn encode(text: &str, codebook: &HashMap<char, String>) -> String {
     for c in text.chars() {
         encoded += codebook.get(&c).unwrap();
     }
-    for (key,value) in codebook{
-        println!("{} : {}",key,value);
-    }
+    // for (key,value) in codebook{
+    //     println!("{} : {}",key,value);
+    // }
     encoded
 }
-
 pub fn decode(encoded: &str, root: &Node) -> String {
     let mut decoded = String::new();
     let mut node = root;
