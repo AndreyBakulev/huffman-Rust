@@ -26,8 +26,8 @@ fn main() {
     let encoded = encode(&*text, &codebook);
     let decoded = decode(&encoded, &huffman_tree);
     let time_taken = timer.elapsed();
-    println!("Encoded text: {}", encoded);
-    println!("Decoded text: {}", decoded);
+    //println!("Encoded text: {}", encoded);
+    //println!("Decoded text: {}", decoded);
     println!("Took {:?} to encode + decode a string of len {}",time_taken, text.len());
     let percentage_cut:f32 = (encoded.len() as f32/((text.len() as f32)*8f32))* 100f32;
     println!("Cut down from {} to {} bits! ({}%)",text.len()*8,encoded.len(),percentage_cut);
@@ -41,6 +41,7 @@ shannon-fano coding
 DEFLATE
 LZ4
 
+Add compression for images + audio
 
 end goal is to zip files with this algorithm
  */
