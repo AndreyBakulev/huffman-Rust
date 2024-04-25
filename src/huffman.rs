@@ -62,7 +62,6 @@ pub fn build_huffman_tree(freq_map: &HashMap<char, usize>) -> Node {
     }
     heap.pop().unwrap()
 }
-
 pub fn build_codebook(node: &Node, prefix: String, codebook: &mut HashMap<char, String>) {
     if let Some(symbol) = node.symbol {
         codebook.insert(symbol, prefix);
