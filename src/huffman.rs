@@ -75,7 +75,6 @@ pub fn build_codebook(node: &Node, prefix: String, codebook: &mut HashMap<char, 
         }
     }
 }
-
 pub fn encode(text: &str, codebook: &HashMap<char, String>) -> String {
     let mut encoded = String::new();
     for c in text.chars() {
