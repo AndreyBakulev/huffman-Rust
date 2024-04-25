@@ -1,21 +1,34 @@
+use std::cmp::Ordering;
 use std::collections::{BinaryHeap, HashMap};
 use std::fmt::{Display};
 
-#[derive(PartialEq, Eq, PartialOrd, Ord, Debug)]
+#[derive(PartialEq, Eq, Debug)]
 pub struct Node {
     pub freq: usize,
     pub symbol: Option<char>,
     pub left: Option<Box<Node>>,
     pub right: Option<Box<Node>>,
 }
+impl Ord for Node {
+    fn cmp(&self, other: &Self) -> Ordering {
+        other.freq.cmp(&self.freq)
+    }
+}
 
+impl PartialOrd for Node {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
+    }
+}
 pub fn build_frequency_map(text: &str) -> HashMap<char, usize> {
     let mut freq_map = HashMap::new();
     //counts occurrences of each char
     for c in text.chars() {
         *freq_map.entry(c).or_insert(0) += 1;
     }
-    println!("{:?}",freq_map);
+    for (key,value) in &freq_map{
+        println!("{} : {}",key,value);
+    }
     freq_map
 }
 pub fn build_huffman_tree(freq_map: &HashMap<char, usize>) -> Node {
@@ -30,10 +43,12 @@ pub fn build_huffman_tree(freq_map: &HashMap<char, usize>) -> Node {
             right: None,
         });
     }
+    //println!("{:?}",heap);
     //get two smallest nodes from heap, make them into one, and push it
     while heap.len() > 1 {
         let left = heap.pop().unwrap();
         let right = heap.pop().unwrap();
+        println!("{:?},{:?}",&left.freq,&right.freq);
         let freq = left.freq + right.freq;
         let node = Node {
             freq,
