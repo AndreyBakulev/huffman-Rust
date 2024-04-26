@@ -32,6 +32,9 @@ fn main() {
 }
 }
 /*
+
+TODO:
+write the encoded string to file and feed it into decompression
 PROBLEMS:
     none :D
 
