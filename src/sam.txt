@@ -1,135 +1,137 @@
-"GREEN EGGS AND HAM" (by Doctor Seuss)
-
-I AM SAM. I AM SAM. SAM I AM.
-
-THAT SAM-I-AM! THAT SAM-I-AM! I DO NOT LIKE THAT SAM-I-AM!
-
-DO WOULD YOU LIKE GREEN EGGS AND HAM?
-
-I DO NOT LIKE THEM,SAM-I-AM.
-I DO NOT LIKE GREEN EGGS AND HAM.
-
-WOULD YOU LIKE THEM HERE OR THERE?
-
-I WOULD NOT LIKE THEM HERE OR THERE.
-I WOULD NOT LIKE THEM ANYWHERE.
-I DO NOT LIKE GREEN EGGS AND HAM.
-I DO NOT LIKE THEM, SAM-I-AM.
-
-WOULD YOU LIKE THEM IN A HOUSE?
-WOULD YOU LIKE THEN WITH A MOUSE?
-
-I DO NOT LIKE THEM IN A HOUSE.
-I DO NOT LIKE THEM WITH A MOUSE.
-I DO NOT LIKE THEM HERE OR THERE.
-I DO NOT LIKE THEM ANYWHERE.
-I DO NOT LIKE GREEN EGGS AND HAM.
-I DO NOT LIKE THEM, SAM-I-AM.
-
-WOULD YOU EAT THEM IN A BOX?
-WOULD YOU EAT THEM WITH A FOX?
-
-NOT IN A BOX. NOT WITH A FOX.
-NOT IN A HOUSE. NOT WITH A MOUSE.
-I WOULD NOT EAT THEM HERE OR THERE.
-I WOULD NOT EAT THEM ANYWHERE.
-I WOULD NOT EAT GREEN EGGS AND HAM.
-I DO NOT LIKE THEM, SAM-I-AM.
-
-WOULD YOU? COULD YOU? IN A CAR?
-EAT THEM! EAT THEM! HERE THEY ARE.
-
-I WOULD NOT, COULD NOT, IN A CAR.
-
-YOU MAY LIKE THEM. YOU WILL SEE.
-YOU MAY LIKE THEM IN A TREE!
-
-I WOULD NOT, COULD NOT IN A TREE.
-NOT IN A CAR! YOU LET ME BE.
-I DO NOT LIKE THEM IN A BOX.
-I DO NOT LIKE THEM WITH A FOX.
-I DO NOT LIKE THEM IN A HOUSE.
-I DO NOT LIKE THEM WITH A MOUSE.
-I DO NOT LIKE THEM HERE OR THERE.
-I DO NOT LIKE THEM ANYWHERE.
-I DO NOT LIKE GREEN EGGS AND HAM.
-I DO NOT LIKE THEM, SAM-I-AM.
-
-A TRAIN! A TRAIN! A TRAIN! A TRAIN!
-COULD YOU, WOULD YOU ON A TRAIN?
-
-NOT ON TRAIN! NOT IN A TREE!
-NOT IN A CAR! SAM! LET ME BE!
-I WOULD NOT, COULD NOT, IN A BOX.
-I WOULD NOT, COULD NOT, WITH A FOX.
-I WILL NOT EAT THEM IN A HOUSE.
-I WILL NOT EAT THEM HERE OR THERE.
-I WILL NOT EAT THEM ANYWHERE.
-I DO NOT EAT GREEM EGGS AND HAM.
-I DO NOT LIKE THEM, SAM-I-AM.
-
-SAY! IN THE DARK? HERE IN THE DARK!
-WOULD YOU, COULD YOU, IN THE DARK?
-
-I WOULD NOT, COULD NOT, IN THE DARK.
-
-WOULD YOU COULD YOU IN THE RAIN?
-
-I WOULD NOT, COULD NOT IN THE RAIN.
-NOT IN THE DARK. NOT ON A TRAIN.
-NOT IN A CAR. NOT IN A TREE.
-I DO NOT LIKE THEM, SAM, YOU SEE.
-NOT IN A HOUSE. NOT IN A BOX.
-NOT WITH A MOUSE. NOT WITH A FOX.
-I WILL NOT EAT THEM HERE OR THERE.
-I DO NOT LIKE THEM ANYWHERE!
-
-YOU DO NOT LIKE GREEN EGGS AND HAM?
-
-I DO NOT LIKE THEM, SAM-I-AM.
-
-COULD YOU, WOULD YOU, WITH A GOAT?
-
-I WOULD NOT, COULD NOT WITH A GOAT!
-
-WOULD YOU, COULD YOU, ON A BOAT?
-
-I COULD NOT, WOULD NOT, ON A BOAT.
-I WILL NOT, WILL NOT, WITH A GOAT.
-I WILL NOT EAT THEM IN THE RAIN.
-NOT IN THE DARK! NOT IN A TREE!
-NOT IN A CAR! YOU LET ME BE!
-I DO NOT LIKE THEM IN A BOX.
-I DO NOT LIKE THEM WITH A FOX.
-I WILL NOT EAT THEM IN A HOUSE.
-I DO NOT LIKE THEM WITH A MOUSE.
-I DO NOT LIKE THEM HERE OR THERE.
-I DO NOT LIKE THEM ANYWHERE!
-I DO NOT LIKE GREEN EGGS AND HAM!
-I DO NOT LIKE THEM, SAM-I-AM.
-
-YOU DO NOT LIKE THEM. SO YOU SAY.
-TRY THEM! TRY THEM! AND YOU MAY.
-TRY THEM AND YOU MAY, I SAY.
-
-sAM! IF YOU LET ME BE,
-I WILL TRY THEM. YOU WILL SEE.
-
-(... and he tries them ...)
-
-SAY! I LIKE GREEN EGGS AND HAM!
-I DO! I LIKE THEM, SAM-I-AM!
-AND I WOULD EAT THEM IN A BOAT.
-AND I WOULD EAT THEM WITH A GOAT...
-AND I WILL EAT THEM, IN THE RAIN.
-AND IN THE DARK. AND ON A TRAIN.
-AND IN A CAR. AND IN A TREE.
-THEY ARE SO GOOD, SO GOOD, YOU SEE!
-SO I WILL EAT THEM IN A BOX.
-AND I WILL EAT THEM WITH A FOX.
-AND I WILL EAT THEM IN A HOUSE.
-AND I WILL EAT THEM WITH A MOUSE.
-AND I WILL EAT THEM HERE AND THERE.
-SAY! I WILL EAT THEM ANYWHERE!
-I DO SO LIKE GREEN EGGS AND HAM!
-THANK YOU! THANK YOU, SAM I AM.
+I am Sam
+Sam I am
+That Sam-I-am
+That Sam-I-am
+I do not like that Sam-I-am
+Do you like 
+green eggs and ham
+I do not like them Sam-I-am
+I do not like
+green eggs and ham
+Would you like them 
+here or there
+I would not like them
+here or there
+I would not like them anywhere 
+I do not like
+green eggs and ham
+I do not like them Sam-I-am
+Would you like them in a house
+Would you like them with a mouse
+I do not like them
+in a house
+I do not like them
+with a mouse
+I do not like them
+here or there
+I do not like them
+anywhere
+I do not like 
+green eggs and ham
+I do not like them 
+Sam-I-am
+Would you eat them
+in a box
+Would you eat them
+with a fox
+Not in a box 
+Not with a fox
+Not in a house
+Not with a mouse
+I would not eat them
+here or there
+I would not eat them anywhere
+I would not eat green eggs and ham
+I do not like them Sam-I-am
+Would you Could you In a car
+Eat them Eat them Here they are
+I would not could not in a car
+You may like them You will see 
+You may like them in a tree
+I would not could not in a tree
+Not in a car You let me be
+I do not like them in a box
+I do not like them with a fox
+I do not like them in a house
+I do not like them with a mouse
+I do not like them here or there
+I do not like them anywhere
+I do not like green eggs and ham
+I do not like them Sam-I-am
+A train A train
+A train A train
+Could you would you
+on a train
+Not in a train Not in a tree
+Not in a car Sam Let me be
+I would not could not in a box
+I could not would not with a fox
+I will not eat them with a mouse
+I will not eat them in a house
+I will not eat them here or there
+I will not eat them anywhere
+I do not like green eggs and spam
+I do not like them Sam-I-am
+Say In the dark
+Here in the dark
+Would you could you
+in the dark
+I would not could not in the dark
+Would you could you in the rain
+I would not could not in the rain
+Not in the dark Not on a train
+Not in a car Not in a tree
+I do not like them Sam you see
+Not in a house Not in a box
+Not with a mouse Not with a fox
+I will not eat them here or there
+I do not like them anywhere
+You do not like 
+green eggs and ham
+I do not like them
+Sam-I-am
+Could you would you 
+with a goat
+I would not could not
+with a goat
+Would you could you
+on a boat
+I could not would not 
+on a boat
+I will not will not 
+with a goat
+I will not eat them in the rain
+I will not eat them on a train
+Not in the dark Not in a tree
+Not in a car You let me be
+I do not like them in a box
+I do not like them with a fox
+I will not eat them in a house
+I do not like them with a mouse
+I do not like them here or there
+I do not like them anywhere
+I do not like green eggs and ham
+I do not like them Sam-I-am
+You do not like them So you say
+Try them Try them And you may
+Try them and you may I say
+Sam If you will let me be
+I will try them You will see
+Say I like green eggs and ham
+I do I like them Sam-I-am
+And I would eat them in a boat
+And I would eat them with a goat
+And I will eat them in the rain
+And in the dark And on a train
+And in a car And in a tree
+They are so good so good you see
+So I will eat them in a box
+And I will eat them with a fox
+And I will eat them in a house
+And I will eat them with a mouse
+And I will eat them here and there
+Say I will eat them anywhere
+I do so like
+green eggs and ham
+Thank you
+Thank you Sam-I-am

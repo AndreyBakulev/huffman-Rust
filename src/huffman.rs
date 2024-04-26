@@ -26,7 +26,9 @@ pub fn encode_huffman(text: &str) -> String{
     let mut codebook = HashMap::new();
     build_codebook(&huffman_tree, String::new(),&mut codebook);
     let encoded = encode(&*text, &codebook);
-    decode(&*encoded,&huffman_tree);
+    let decoded =decode(&*encoded,&huffman_tree, text);
+    println!("{}",encoded);
+    println!("{}",decoded);
     encoded
 }
 pub fn build_frequency_map(text: &str) -> HashMap<char, usize> {
@@ -93,8 +95,9 @@ pub fn encode(text: &str, codebook: &HashMap<char, String>) -> String {
     // }
     encoded
 }
-pub fn decode(encoded: &str, root: &Node) -> String {
+pub fn decode(encoded: &str, root: &Node, orig_string: &str) -> String {
     let mut decoded = String::new();
+    let mut correct:&str = String::new().as_str();
     let mut node = root;
     for bit in encoded.chars() {
         node = if bit == '0' {
@@ -107,5 +110,10 @@ pub fn decode(encoded: &str, root: &Node) -> String {
             node = root;
         }
     }
-    decoded
+    if decoded == orig_string {
+        correct = "\n------------------\nStrings match!\n";
+    } else {
+        correct = "\n------------------\nStrings don't match!\n";
+    }
+    decoded + correct
 }
