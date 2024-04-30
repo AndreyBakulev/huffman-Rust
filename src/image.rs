@@ -1,11 +1,11 @@
 // use std::fmt;
-//
+
 // pub struct Image {
 //     width: usize,
 //     height: usize,
 //     pixels: Vec<u8>,
 // }
-//
+
 // impl Image {
 //     pub fn new(width: usize, height: usize, pixels: Vec<u8>) -> Self {
 //         Image {
@@ -18,11 +18,11 @@
 //         //image::save_buffer(path, &self.pixels, self.width, self.height, image::ColorType::Rgb8)?;
 //         unimplemented!()
 //     }
-//
+
 //     pub fn compress_rle(&self) -> Vec<(u8, u32)> {
 //         run_length_encode(&self.pixels)
 //     }
-//
+
 //     pub fn decompress_rle(encoded: &[(u8, u32)]) -> Self {
 //         let pixels = run_length_decode(encoded);
 //         Image {
@@ -43,7 +43,7 @@
 //         }
 //     }
 // }
-//
+
 // fn run_length_encode(pixels: &[u8]) -> Vec<(u8, u32)> {
 //     //basically check if current pixel is same as prev pixel
 //     //if yes, add count to u32, if no, push and go to next pixel
@@ -62,7 +62,7 @@
 //     encoded.push((prev_pixel, count));
 //     encoded
 // }
-//
+
 // fn run_length_decode(encoded: &[(u8, u32)]) -> Vec<u8> {
 //     //fill count amt of pixels with u8 color
 //     let mut decoded = Vec::new();
@@ -71,12 +71,12 @@
 //     }
 //     decoded
 // }
-//
+
 // fn compress_image(pixels: &[u8], width: usize, height: usize, quality: f64) -> Vec<f64> {
 //     // Implementation of DCT compression
 //     // ...
 // }
-//
+
 // fn decompress_image(compressed: &[f64], width: usize, height: usize) -> Vec<f64> {
 //     // Implementation of DCT decompression
 //     // ...
