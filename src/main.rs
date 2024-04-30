@@ -23,8 +23,15 @@ fn main() {
     } else {
         println!("No path found, encoding input");
     }
+    let mut text2 = String::new();
+    println!("Would you like to print out the encoded and decoded string?");
+    stdin().read_line(&mut text2).expect("Failed to read line");
+    let mut print = false;
+    if text2.trim() == "yes" || text2.trim() == "1" || text2.trim() == "true"{
+        print = true;
+    }
     let timer = Instant::now();
-    let encoded = encode_huffman(&*text);
+    let encoded = encode_huffman(&*text,print);
     let time_taken = timer.elapsed();
     println!("Took {:?} to encode + decode a string of len {}",time_taken, text.len());
     let percentage_cut:f32 = (encoded.len() as f32/((text.len() as f32)*8f32))* 100f32;

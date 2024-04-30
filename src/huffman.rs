@@ -20,15 +20,17 @@ impl PartialOrd for Node {
         Some(self.cmp(other))
     }
 }
-pub fn encode_huffman(text: &str) -> String{
+pub fn encode_huffman(text: &str,print: bool) -> String{
     let freq_map = build_frequency_map(&*text);
     let huffman_tree = build_huffman_tree(&freq_map);
     let mut codebook = HashMap::new();
     build_codebook(&huffman_tree, String::new(),&mut codebook);
     let encoded = encode(&*text, &codebook);
     let decoded =decode(&*encoded,&huffman_tree, text);
-    println!("{}",encoded);
-    println!("{}",decoded);
+    if print {
+        println!("{}",encoded);
+        println!("{}",decoded);
+    }
     encoded
 }
 pub fn build_frequency_map(text: &str) -> HashMap<char, usize> {
