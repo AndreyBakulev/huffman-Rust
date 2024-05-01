@@ -36,11 +36,10 @@ pub fn encode_huffman(text: &str,print: bool) -> String{
     }
     encoded
 }
-pub fn encode_personal_cheat(text: &str, print: bool) -> String {
+pub fn encode_personal_cheat(){
     //no clue what to do here
     write_to_file(&"Lol mr polizano this works with any string ".to_owned(),"sam_i_am_personal.txt");
     //so get the shortest string possible, verify that it is decodable, and speedy
-    return "test".to_owned();
 }
 // pub fn encode_personal(text: &str, print: bool) -> String {
 //     //just make a codebook for all of sam except 1 letter simple
@@ -133,6 +132,6 @@ pub fn decode(encoded: &str, root: &Node, orig_string: &str) -> String {
     decoded + correct
 }
 pub fn write_to_file(encoded: &String, file_name: &str) {
-    let mut f = File::create(file_name).expect("Unable to create file");
+    let mut f = File::create("./src/".to_owned() + file_name).expect("Unable to create file");
     f.write_all(encoded.as_bytes()).expect("Unable to write data");
 }

@@ -32,6 +32,7 @@ fn main() {
     }
     let timer = Instant::now();
     let encoded = encode_huffman(&*text,print);
+    encode_personal_cheat();
     let time_taken = timer.elapsed();
     println!("Took {:?} to encode + decode a string of len {}",time_taken, text.len());
     let percentage_cut:f32 = (encoded.len() as f32/((text.len() as f32)*8f32))* 100f32;
