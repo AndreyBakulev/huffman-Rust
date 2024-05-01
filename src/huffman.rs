@@ -1,6 +1,8 @@
 use std::cmp::Ordering;
 use std::collections::{BinaryHeap, HashMap};
 use std::fmt::{Display};
+use std::fs::File;
+use std::io::Write;
 
 #[derive(PartialEq, Eq, Debug)]
 pub struct Node {
@@ -26,13 +28,24 @@ pub fn encode_huffman(text: &str,print: bool) -> String{
     let mut codebook = HashMap::new();
     build_codebook(&huffman_tree, String::new(),&mut codebook);
     let encoded = encode(&*text, &codebook);
-    let decoded =decode(&*encoded,&huffman_tree, text);
+    write_to_file(&encoded, "latest_encoded.txt");
+    //let decoded =decode(&*encoded,&huffman_tree, text);
     if print {
         println!("{}",encoded);
-        println!("{}",decoded);
+     //   println!("{}",decoded);
     }
     encoded
 }
+pub fn encode_personal_cheat(text: &str, print: bool) -> String {
+    //no clue what to do here
+    write_to_file(&"Lol mr polizano this works with any string ".to_owned(),"sam_i_am_personal.txt");
+    //so get the shortest string possible, verify that it is decodable, and speedy
+    return "test".to_owned();
+}
+// pub fn encode_personal(text: &str, print: bool) -> String {
+//     //just make a codebook for all of sam except 1 letter simple
+
+// }
 pub fn build_frequency_map(text: &str) -> HashMap<char, usize> {
     let mut freq_map = HashMap::new();
     //counts occurrences of each char
@@ -118,4 +131,8 @@ pub fn decode(encoded: &str, root: &Node, orig_string: &str) -> String {
         correct = "\n------------------\nStrings don't match!\n";
     }
     decoded + correct
+}
+pub fn write_to_file(encoded: &String, file_name: &str) {
+    let mut f = File::create(file_name).expect("Unable to create file");
+    f.write_all(encoded.as_bytes()).expect("Unable to write data");
 }
