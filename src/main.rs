@@ -18,48 +18,46 @@ fn main() {
         stdin().read_line(&mut text).expect("Failed to read line");
         if text.trim() == "cheat" {
             println!("Hehhehehehe you have decided to cheat");
-            encode_personal_cheat(&*text);
-        }
-        let path = "./src/".to_owned() + &*text.clone().trim();
-        if Path::new(&path).exists() {
-            text = fs::read_to_string(&path).expect("Should have been able to read the file");
+            encode_personal_cheat();
+            let mut text3 = String::new();
+            println!("Would you like to decode the string?");
+            stdin().read_line(&mut text3).expect("Failed to read line");
+            if text3.trim() == "yes" || text3.trim() == "1" || text3.trim() == "true" {
+                let timer2 = Instant::now();
+                decode_latest(None);
+                println!(
+                    "Took {:?} to decode a string of len 2",
+                    timer2.elapsed()
+                );
+            }
         } else {
-            println!("No path found, encoding input");
-        }
-        let mut text2 = String::new();
-        println!("Would you like to print out the encoded string?");
-        stdin().read_line(&mut text2).expect("Failed to read line");
-        let mut print = false;
-        if text2.trim() == "yes" || text2.trim() == "1" || text2.trim() == "true" {
-            print = true;
-        }
-        let timer = Instant::now();
-        let (encoded,latest_root) = encode_huffman(&*text,print);
-        let time_taken = timer.elapsed();
-        println!(
-            "Took {:?} to encode a string of len {}",
-            time_taken,
-            text.len()
-        );
-        let percentage_cut: f32 = (encoded.len() as f32 / ((text.len() as f32) * 8f32)) * 100f32;
-        println!(
-            "Cut down from {} to {} bits! ({}%)",
-            text.len() * 8,
-            encoded.len(),
-            percentage_cut
-        );
-        let mut text3 = String::new();
-        println!("Would you like to decode the string?");
-        stdin().read_line(&mut text3).expect("Failed to read line");
-        let timer2 = Instant::now();
-        if text3.trim() == "yes" || text3.trim() == "1" || text3.trim() == "true" {
-            decode_latest(&latest_root);
-            let time_taken2 = timer2.elapsed();
-            println!(
-                "Took {:?} to decode a string of len {}",
-                time_taken2,
-                encoded.len()
-            );
+            let path = "./src/".to_owned() + &*text.clone().trim();
+            if Path::new(&path).exists() {
+                text = fs::read_to_string(&path).expect("Should have been able to read the file");
+            } else {
+                println!("No path found, encoding input");
+            }
+            let mut text2 = String::new();
+            println!("Would you like to print out the encoded string?");
+            stdin().read_line(&mut text2).expect("Failed to read line");
+            let mut print = false;
+            if text2.trim() == "yes" || text2.trim() == "1" || text2.trim() == "true" {
+                print = true;
+            }
+            let (encoded, latest_root) = encode_huffman(&*text, print);
+            let mut text3 = String::new();
+            println!("Would you like to decode the string?");
+            stdin().read_line(&mut text3).expect("Failed to read line");
+            let timer2 = Instant::now();
+            if text3.trim() == "yes" || text3.trim() == "1" || text3.trim() == "true" {
+                decode_latest(Some(&latest_root));
+                let time_taken2 = timer2.elapsed();
+                println!(
+                    "Took {:?} to decode a string of len {}",
+                    time_taken2,
+                    encoded.len()
+                );
+            }
         }
     }
 }
