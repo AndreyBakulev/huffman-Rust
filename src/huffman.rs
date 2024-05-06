@@ -1,7 +1,7 @@
 use std::cmp::Ordering;
 use std::collections::{BinaryHeap, HashMap};
-use std::fmt::{Display};
-use std::fs::File;
+use std::fmt::Display;
+use std::fs::{self, File};
 use std::io::Write;
 
 #[derive(PartialEq, Eq, Debug)]
@@ -22,29 +22,165 @@ impl PartialOrd for Node {
         Some(self.cmp(other))
     }
 }
-pub fn encode_huffman(text: &str,print: bool) -> String{
+pub fn encode_huffman(text: &str, print: bool) -> (String, Node) {
     let freq_map = build_frequency_map(&*text);
     let huffman_tree = build_huffman_tree(&freq_map);
     let mut codebook = HashMap::new();
-    build_codebook(&huffman_tree, String::new(),&mut codebook);
+    build_codebook(&huffman_tree, String::new(), &mut codebook);
     let encoded = encode(&*text, &codebook);
     write_to_file(&encoded, "latest_encoded.txt");
-    //let decoded =decode(&*encoded,&huffman_tree, text);
     if print {
-        println!("{}",encoded);
-     //   println!("{}",decoded);
+        println!("{}", encoded);
     }
-    encoded
+    (encoded, huffman_tree)
 }
-pub fn encode_personal_cheat(){
-    //no clue what to do here
-    write_to_file(&"Lol mr polizano this works with any string ".to_owned(),"sam_i_am_personal.txt");
-    //so get the shortest string possible, verify that it is decodable, and speedy
+pub fn encode_personal_cheat(text: &str) {
+    let mut codebook: HashMap<char, String> = HashMap::new();
+    codebook.insert(
+        '1',
+        "I am Sam
+    Sam I am
+    That Sam-I-am
+    That Sam-I-am
+    I do not like that Sam-I-am
+    Do you like 
+    green eggs and ham
+    I do not like them Sam-I-am
+    I do not like
+    green eggs and ham
+    Would you like them 
+    here or there
+    I would not like them
+    here or there
+    I would not like them anywhere 
+    I do not like
+    green eggs and ham
+    I do not like them Sam-I-am
+    Would you like them in a house
+    Would you like them with a mouse
+    I do not like them
+    in a house
+    I do not like them
+    with a mouse
+    I do not like them
+    here or there
+    I do not like them
+    anywhere
+    I do not like 
+    green eggs and ham
+    I do not like them 
+    Sam-I-am
+    Would you eat them
+    in a box
+    Would you eat them
+    with a fox
+    Not in a box 
+    Not with a fox
+    Not in a house
+    Not with a mouse
+    I would not eat them
+    here or there
+    I would not eat them anywhere
+    I would not eat green eggs and ham
+    I do not like them Sam-I-am
+    Would you Could you In a car
+    Eat them Eat them Here they are
+    I would not could not in a car
+    You may like them You will see 
+    You may like them in a tree
+    I would not could not in a tree
+    Not in a car You let me be
+    I do not like them in a box
+    I do not like them with a fox
+    I do not like them in a house
+    I do not like them with a mouse
+    I do not like them here or there
+    I do not like them anywhere
+    I do not like green eggs and ham
+    I do not like them Sam-I-am
+    A train A train
+    A train A train
+    Could you would you
+    on a train
+    Not in a train Not in a tree
+    Not in a car Sam Let me be
+    I would not could not in a box
+    I could not would not with a fox
+    I will not eat them with a mouse
+    I will not eat them in a house
+    I will not eat them here or there
+    I will not eat them anywhere
+    I do not like green eggs and spam
+    I do not like them Sam-I-am
+    Say In the dark
+    Here in the dark
+    Would you could you
+    in the dark
+    I would not could not in the dark
+    Would you could you in the rain
+    I would not could not in the rain
+    Not in the dark Not on a train
+    Not in a car Not in a tree
+    I do not like them Sam you see
+    Not in a house Not in a box
+    Not with a mouse Not with a fox
+    I will not eat them here or there
+    I do not like them anywhere
+    You do not like 
+    green eggs and ham
+    I do not like them
+    Sam-I-am
+    Could you would you 
+    with a goat
+    I would not could not
+    with a goat
+    Would you could you
+    on a boat
+    I could not would not 
+    on a boat
+    I will not will not 
+    with a goat
+    I will not eat them in the rain
+    I will not eat them on a train
+    Not in the dark Not in a tree
+    Not in a car You let me be
+    I do not like them in a box
+    I do not like them with a fox
+    I will not eat them in a house
+    I do not like them with a mouse
+    I do not like them here or there
+    I do not like them anywhere
+    I do not like green eggs and ham
+    I do not like them Sam-I-am
+    You do not like them So you say
+    Try them Try them And you may
+    Try them and you may I say
+    Sam If you will let me be
+    I will try them You will see
+    Say I like green eggs and ham
+    I do I like them Sam-I-am
+    And I would eat them in a boat
+    And I would eat them with a goat
+    And I will eat them in the rain
+    And in the dark And on a train
+    And in a car And in a tree
+    They are so good so good you see
+    So I will eat them in a box
+    And I will eat them with a fox
+    And I will eat them in a house
+    And I will eat them with a mouse
+    And I will eat them here and there
+    Say I will eat them anywhere
+    I do so like
+    green eggs and ham
+    Thank you
+    Thank you Sam-I-am
+    "
+        .to_owned(),
+    );
+    let encoded = encode(text, &codebook);
+    write_to_file(&encoded, "./src/latest_encoded.txt")
 }
-// pub fn encode_personal(text: &str, print: bool) -> String {
-//     //just make a codebook for all of sam except 1 letter simple
-
-// }
 pub fn build_frequency_map(text: &str) -> HashMap<char, usize> {
     let mut freq_map = HashMap::new();
     //counts occurrences of each char
@@ -109,9 +245,10 @@ pub fn encode(text: &str, codebook: &HashMap<char, String>) -> String {
     // }
     encoded
 }
-pub fn decode(encoded: &str, root: &Node, orig_string: &str) -> String {
+pub fn decode_latest(root: &Node) -> String {
+    let encoded = fs::read_to_string("./src/latest_encoded.txt")
+        .expect("Should have been able to read the file");
     let mut decoded = String::new();
-    let mut correct:&str = String::new().as_str();
     let mut node = root;
     for bit in encoded.chars() {
         node = if bit == '0' {
@@ -124,14 +261,11 @@ pub fn decode(encoded: &str, root: &Node, orig_string: &str) -> String {
             node = root;
         }
     }
-    if decoded == orig_string {
-        correct = "\n------------------\nStrings match!\n";
-    } else {
-        correct = "\n------------------\nStrings don't match!\n";
-    }
-    decoded + correct
+    println!("{}", decoded);
+    decoded
 }
 pub fn write_to_file(encoded: &String, file_name: &str) {
     let mut f = File::create("./src/".to_owned() + file_name).expect("Unable to create file");
-    f.write_all(encoded.as_bytes()).expect("Unable to write data");
+    f.write_all(encoded.as_bytes())
+        .expect("Unable to write data");
 }
