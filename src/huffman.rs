@@ -60,10 +60,6 @@ pub fn build_frequency_map(text: &str) -> HashMap<char, usize> {
     for c in text.chars() {
         *freq_map.entry(c).or_insert(0) += 1;
     }
-    // for (key,value) in &freq_map{
-    //     println!("{} : {}",key,value);
-    // }
-    //println!("-----------------------");
     freq_map
 }
 pub fn build_huffman_tree(freq_map: &HashMap<char, usize>) -> Node {
@@ -78,12 +74,10 @@ pub fn build_huffman_tree(freq_map: &HashMap<char, usize>) -> Node {
             right: None,
         });
     }
-    //println!("{:?}",heap);
     //get two smallest nodes from heap, make them into one, and push it
     while heap.len() > 1 {
         let left = heap.pop().unwrap();
         let right = heap.pop().unwrap();
-        //println!("Left:{:?}\nRight:{:?}\n",&left,&right);
         let freq = left.freq + right.freq;
         let node = Node {
             freq,
@@ -91,7 +85,6 @@ pub fn build_huffman_tree(freq_map: &HashMap<char, usize>) -> Node {
             left: Some(Box::new(left)),
             right: Some(Box::new(right)),
         };
-        //println!("Node:{:?}\n",&node);
         heap.push(node);
     }
     heap.pop().unwrap()
@@ -113,13 +106,10 @@ pub fn encode(text: &str, codebook: &HashMap<char, String>) -> String {
     for c in text.chars() {
         encoded += codebook.get(&c).unwrap();
     }
-    // for (key,value) in codebook{
-    //     println!("{} : {}",key,value);
-    // }
     encoded
 }
 pub fn decode_latest(root: Option<&Node>) -> String {
-    if let Some(root) = root{
+    if let Some(root) = root {
         let encoded = fs::read_to_string("./src/latest_encoded.txt")
             .expect("Should have been able to read the file");
         let mut decoded = String::new();
